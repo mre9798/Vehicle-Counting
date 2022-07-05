@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block script %}
+<style>
+    video {
+  border: 1px solid black;
+  display: block;
+}
+</style>
+<script>
+         $(function () {
+            const input = document.getElementById('file-input');
+const video = document.getElementById('video');
+const videoSource = document.createElement('source');
+
+input.addEventListener('change', function() {
+  const files = this.files || [];
+
+  if (!files.length) return;
+  
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    videoSource.setAttribute('src', e.target.result);
+    video.appendChild(videoSource);
+    video.load();
+    video.play();
+  };
+  
+  reader.onprogress = function (e) {
+    console.log('progress: ', Math.round((e.loaded * 100) / e.total));
+  };
+  
+  reader.readAsDataURL(files[0]);
+  
+});
+    });
+
+</script>
+
+{% endblock script %}
+{% block content %}
+
+    <form action="/result" method="post" enctype="multipart/form-data">
+        
+        <div class="row">
+            <div class="center ml-auto mr-auto">
+                <div class="ml-auto mr ml-auto"><br>
+                    <div id="preview" style="height: 0px;"></div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    
+                    <input id="file-input" name="vi" type="file" accept="video/*">
+                    <video id="video" width="450" height="400" controls autoplay loop></video>
+                    <!-- <label for="file"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;Choose a file</label> -->
+                </div>       
+            </div>
+        </div>
+        <div class="row">
+            <div class="center ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary butn">Counting</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock content %}

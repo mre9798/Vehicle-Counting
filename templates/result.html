@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block script %}
+
+    
+{% endblock script%}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-6" style="margin-top: 100px; margin-left: 100px;">
+            <center>
+                <video width="450" height="400" controls autoplay loop src="/cam3.mp4">
+                    
+                </video>
+            </center>
+        </div>
+        
+        <div class="col-md-6" style="margin-top: 50px;">
+            
+            <center><canvas id="chart" width="448" height="448"></canvas></center>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" integrity="sha256-nZaxPHA2uAaquixjSDX19TmIlbRNCOrf5HO1oHl5p70=" crossorigin="anonymous"></script>
+            <script>
+    
+              /*  var mychart = document.getElementById("chart").getContext("2d");
+
+                new Chart(mychart, {
+                type: 'bar',
+                data: {
+                    labels: [{% for item in labels %}
+                                    "{{item}}",
+                            {% endfor %}],
+                    datasets: [{
+                        data: [
+                                {% for val in result %}
+                                    {{val}},
+                                {% endfor %}
+                            ],
+                        backgroundColor: 'rgba(151,187,205,1)',
+                        borderColor: 'rgba(151,187,205,10)',
+                        pointBackgroundColor: 'rgba(151,187,205,1)'
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                            beginAtZero: true,
+                            stepSize: 0.1
+                            }
+                        }]
+                    }
+                }
+                });
+                           */ 
+                </script>
+        </div>
+        
+    </div>
+    
+
+{% endblock content %}

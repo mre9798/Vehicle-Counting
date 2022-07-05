@@ -1,0 +1,81 @@
+div.center{
+
+	margin-top: 50px;
+}
+
+img.load{
+
+	height: 448px;
+	width: 448px;
+}
+
+button.butn{
+
+	font-size: 20px;
+	font-variant: small-caps;
+
+}
+
+nav.navcus{
+
+	font-size: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: black;
+	color: white;
+}
+
+span.text{
+
+	font-size: 40px;
+  	font-variant: small-caps;
+
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+img.image{
+
+	height: 448px;
+	width: 448px;
+}
+
+span.prediction{
+
+	text-align: center;
+	margin-top: 50px;
+	font-size: 40px;
+}
